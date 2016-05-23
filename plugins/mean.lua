@@ -5,7 +5,7 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-    "^[!#/][Mm][Ee][Aa][Nn] (.*)$"
+    "^[!#/$][Mm][Ee][Aa][Nn] (.*)$"
   },
   run = run
 }
