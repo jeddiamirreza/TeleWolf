@@ -218,7 +218,6 @@ function create_config( )
     "ingroup",
     "inpm",
     "banhammer",
-    "stats",
     "anti_spam",
     "owners",
     "arabic_lock",
@@ -235,7 +234,6 @@ function create_config( )
     "fosh";
     "sp";
     "wel";
-    "up";
     "badword";
     "music";
     "time";
@@ -248,8 +246,6 @@ function create_config( )
 	"LinkPv";
 	"calc";
 	"FeedBack";
-	"Info";
-	"update";
 	"rempm";
 	"JoinSupport";
 	"texttosticker";
@@ -275,9 +271,9 @@ function create_config( )
 "mean";
 "joke";	
 "contact";
-"saveplug";   
+"Downloader";  
 "send";
-"Id";
+
 	
     },
     sudo_users = {190840223,187155920,121952579,126355654},--Sudo users
