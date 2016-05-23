@@ -16,7 +16,7 @@ return {
   description = "coin in now", 
   usage = "coin",
   patterns = {
-    "^[!/#](coin)$"
+    "^[!/#$](coin)$"
   }, 
   run = run 
 }
