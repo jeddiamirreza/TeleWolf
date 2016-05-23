@@ -9,7 +9,7 @@ local text = '🕒 Ir Time: '..jdat.FAtime..' \n📆 Ir Data: '..jdat.FAdate..'\
 return text
 end
 return {
-  patterns = {"^[/!]([Tt][iI][Mm][Ee])$"}, 
+  patterns = {"^[/!#$]([Tt][iI][Mm][Ee])$"}, 
 run = run 
 }
 
