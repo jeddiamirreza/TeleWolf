@@ -1,9 +1,9 @@
 ﻿local function run(msg, matches)
   if not is_sudo(msg) then -- For Sudoers only !
-    return '⛔️ شما دسترسی ندارید ⛔️'
+    return '⚠️ You Do Not Have Access'
   end
 	if matches[1] == 'pm' and is_sudo(msg) then
-		local response = matches[3]
+		loc⚠️ al response = matches[3]
 		send_large_msg("user#id"..matches[2], response)
 						local receiver = 'user#id'..user_id
 				send_large_msg(receiver, response)
@@ -11,7 +11,7 @@
 	end
 return {
   patterns = {
-    "^([#!/]pm) (%d+) (.*)$"
+    "^[#!/$]([Pp]m) (%d+) (.*)$"
   },
   run = run
 }
