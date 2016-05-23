@@ -273,6 +273,7 @@ function create_config( )
 "contact";
 "Downloader";  
 "send";
+"time";
 
 	
     },
