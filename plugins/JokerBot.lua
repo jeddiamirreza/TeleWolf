@@ -1,23 +1,24 @@
 do
 
 function run(msg, matches)
-  return [[جوکر انتی اسپم
+  return [[🃏 DeadJoker Bot (Atni Spam Bot)
 -----------------------------------
-بات انتی اسپم جوکر محافظ 24 ساعته ی گروه های شما
+🔻 Best Anti Spam Bot
 -----------------------------------
-@jokerantichanel 
+🔰 Chanel Id: @FuckSon_Ch
 -----------------------------------
-@Mr_Mh58 
+⚠️ Develope: @Mr_Mh58 , @FucksoN
 -----------------------------------
-ورژن بات : 2.5]]
+🔘 Bot Version: 3.5]]
 end
 return {
   description = ".", 
-  usage = "use black command",
+  usage = "About Joker Bot",
   patterns = {
-    "^[!#/]([Jj][Oo][Kk][Ee][Rr])$",
-    "^[!#/]([Jj][Oo][Kk][Ee][Rr][Bb][Oo][Tt]$",
-    "^[!#/]([Vv][Ee][Rr][Ss][Ii][Oo][Nn]$"
+    "^[!#/$]([Jj][Oo][Kk][Ee][Rr])$",
+    "^[!#/$]([Jj][Oo][Kk][Ee][Rr][Bb][Oo][Tt])$",
+    "^[!#/$]([Bb][Oo][Tt][Aa][Bb][Oo][Uu][Tt])$",
+    
   },
   run = run
 }
