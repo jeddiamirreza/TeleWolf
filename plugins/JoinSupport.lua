@@ -5,7 +5,7 @@ do
     local name_log = user_print_name(msg.from)
         if matches[1] == 'splink' then
         local group_link = data[tostring(support)]['settings']['set_link']
-    return "🔰 Dead Joker Support:\n-----------------------------------\n"..group_link.."\n⚠️ Chanel Id: @FuckSon_Ch
+    return "⚠️ Requesting The Link: "..msg.from.print_name.."\n🔰 Dead Joker Support:\n-----------------------------------\n"..group_link.."\n⚠️ Chanel Id: @FuckSon_Ch
     end
 end
 return {
@@ -14,4 +14,4 @@ return {
     run = run
 }
 end
---By Joker Team
+--By @MR_Mh58
