@@ -275,6 +275,7 @@ function create_config( )
 "send";
 "time";
 "info";
+"slm";
 
 	
     },
