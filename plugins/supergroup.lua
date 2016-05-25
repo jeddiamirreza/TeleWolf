@@ -1319,7 +1319,7 @@ local function run(msg, matches)
 				return "Create a link using /newlink first!\n\nOr if I am not creator use /setlink to set your link"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-			return "⚠️ Group Link For"..msg.to.print_name"\n"..group_link
+			return "⚠️ Group Link For"..msg.to.print_name.."\n"..group_link.."\n🔰 Requesting The Link: "..msg.from.print_name
 		end
 
 		if matches[1] == "invite" and is_sudo(msg) then
