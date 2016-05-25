@@ -274,7 +274,7 @@ function create_config( )
 "Downloader";  
 "send";
 "time";
-"slm";
+"info";
 
 	
     },
