@@ -113,17 +113,7 @@ local function callback_clean_bots (extra, success, result)
 end
 
 --Get and output info about supergroup
-local function callback_info(cb_extra, success, result)
-local title ="Info for SuperGroup: ["..result.title.."]\n\n"
-local admin_num = "Admin count: "..result.admins_count.."\n"
-local user_num = "User count: "..result.participants_count.."\n"
-local kicked_num = "Kicked user count: "..result.kicked_count.."\n"
-local channel_id = "ID: "..result.peer_id.."\n"
-if result.username then
-	channel_username = "Username: @"..result.username
-else
-	channel_username = ""
-end
+
 local text = title..admin_num..user_num..kicked_num..channel_id..channel_username
     send_large_msg(cb_extra.receiver, text)
 end
@@ -1147,10 +1137,6 @@ local function run(msg, matches)
 		if not data[tostring(msg.to.id)] then
 			return
 		end
-		if matches[1] == "info" then
-			if not is_owner(msg) then
-				return
-			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup info")
 			channel_info(receiver, callback_info, {receiver = receiver, msg = msg})
 		end
@@ -1320,7 +1306,7 @@ local function run(msg, matches)
 				return "⚠️ Not Found Group Link\n🔰 Create New Link For Group With #newlink Command \n☢ Or Set Link For Group With #setlink Command "
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-			return "☢ Group Link For "..msg.to.print_name.."\n----------------------------------------------"..group_link
+			return "☢ Group Link For "..msg.to.print_name.."\n----------------------------------------------"..group_link.."⚠️ Requesting The Link: "..msg.from.username
 		end
 
 		if matches[1] == "invite" and is_sudo(msg) then
@@ -2035,7 +2021,6 @@ return {
 	"^[#!/]([Aa]dd)$",
 	"^[#!/]([Rr]em)$",
 	"^[#!/]([Mm]ove) (.*)$",
-	"^[#!/]([Ii]nfo)$",
 	"^[#!/]([Aa]dmins)$",
 	"^[#!/]([Oo]wner)$",
 	"^[#!/]([Mm]odlist)$",
