@@ -1,7 +1,8 @@
 local function run(msg, matches)
 
 
-if is_owner(msg) matches[1]:lower() == 'helpt' then
+if is_owner(msg) then
+if matches[1]:lower() == 'helpt' then
 return [[
 
 🔰 Trojan Bot Tools (Owner Help) :
@@ -64,7 +65,7 @@ Gif , Mp3 , Pdf , Ogg , Mp4 , Zip , Rar , Wmv , Avi , Webp
 ]]
 end
 end
-
+end
 
 return {
 
