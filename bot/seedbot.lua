@@ -276,6 +276,12 @@ function create_config( )
 "info";
 "slm";
 "UpTime";
+"Painting";
+"write";
+"cap";
+"unshort";
+"helpowner";
+"memberhelp";
 
 	
     },
