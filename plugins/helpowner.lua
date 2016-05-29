@@ -1,11 +1,10 @@
 local function run(msg, matches)
 
 
-if is_owner(msg) matches[1]:lower() == 'help' then
-if matches[2]:lower() == 'tools' then
+if is_owner(msg) matches[1]:lower() == 'helpt' then
 return [[
 
-🔰 Trojan Bot Tools (Owner Tools Help) :
+🔰 Trojan Bot Tools (Owner Help) :
 
 
 ⚠️ Coin In Now :
@@ -71,7 +70,7 @@ return {
 
 patterns = {
 
-"^[!#$/]([Hh]elp) (.*)$",
+"^[!#$/]([Hh]elpt)$",
 
 
 
