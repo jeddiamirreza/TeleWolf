@@ -275,6 +275,7 @@ function create_config( )
 "time";
 "info";
 "slm";
+"UpTime";
 
 	
     },
