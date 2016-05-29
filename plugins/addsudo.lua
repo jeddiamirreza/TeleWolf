@@ -30,13 +30,9 @@ usage = {
 "!invite name [user_name]",
 "!invite id [user_id]" },
 patterns = {
-"^[!/](addsudo)$",
-"^([Aa]ddsudo)$"
+"^[!/#$](addsudo)$",
 
 },
 run = run
 }
 end
-
---@Hextor_Admin
---@Hextor_ch
