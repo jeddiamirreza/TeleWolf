@@ -233,7 +233,6 @@ function create_config( )
     "anti-bot-super";
     "fosh";
     "sp";
-    "wel";
     "badword";
     "music";
     "time";
