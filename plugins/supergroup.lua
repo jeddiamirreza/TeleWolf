@@ -565,7 +565,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "⚠️ Group Settings:\n🔰 Lock Links : "..settings.lock_link.."\n🔰 Lock Flood: "..settings.flood.."\n🔰 Flood Sensitivity : "..NUM_MSG_MAX.."\n🔰 Lock Spam: "..settings.lock_spam.."\n🔰 Lock Arabic: "..settings.lock_arabic.."\n🔰 Lock Member: "..settings.lock_member.."\n🔰 Lock RTL: "..settings.lock_rtl.."\n🔰 Lock Tgservice : "..settings.lock_tgservice.."\n🔰 Lock Sticker: "..settings.lock_sticker.."\n🔰 Public: "..settings.public.."\n🔰 Strict Settings: "..settings.strict.."\n-----------------------------------------\n⭕️ Group Type: #Supergroup \n⭕️ Group Name: "..msg.to.print_name.."\n-----------------------------------------\n I Am Dead Joker Bot 🃏"
+  local text = "⚠️ Group Settings:\n🔰 Lock Links : "..settings.lock_link.."\n🔰 Lock Flood: "..settings.flood.."\n🔰 Flood Sensitivity : "..NUM_MSG_MAX.."\n🔰 Lock Spam: "..settings.lock_spam.."\n🔰 Lock Arabic: "..settings.lock_arabic.."\n🔰 Lock Member: "..settings.lock_member.."\n🔰 Lock RTL: "..settings.lock_rtl.."\n🔰 Lock Tgservice : "..settings.lock_tgservice.."\n🔰 Lock Sticker: "..settings.lock_sticker.."\n🔰 Public: "..settings.public.."\n🔰 Strict Settings: "..settings.strict.."\n-----------------------------------------\n⭕️ Group Type: #Supergroup \n⭕️ Group Name: "..msg.to.print_name.."\n-----------------------------------------\n⚠️ I Am Trojan Bot"
   return text
 end
 
