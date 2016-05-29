@@ -1,6 +1,8 @@
 local function run(msg, matches)
 
-
+if is_momod(msg)
+if matches[1]:lower() == 'help' then
+  return ''
 if matches[1]:lower() == 'help' then
 return [[
 
@@ -64,7 +66,8 @@ Gif , Mp3 , Pdf , Ogg , Mp4 , Zip , Rar , Wmv , Avi , Webp
 ]]
 end
 end
-
+end
+end
 
 return {
 
