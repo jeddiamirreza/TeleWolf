@@ -1,7 +1,7 @@
 local function run(msg, matches)
 
 
-if not is_momod(msg)
+if not is_momod(msg) then
 
 if matches[1]:lower() == 'help' then
 return [[
