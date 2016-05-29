@@ -1,8 +1,8 @@
 local function run(msg, matches)
 
-if is_momod(msg)
-if matches[1]:lower() == 'help' then
-  return ''
+
+if not is_momod(msg)
+
 if matches[1]:lower() == 'help' then
 return [[
 
@@ -45,6 +45,7 @@ return [[
 🔰 The Following File Formats Are Supported
 Gif , Mp3 , Pdf , Ogg , Mp4 , Zip , Rar , Wmv , Avi , Webp
 
+
 ⚠️ Get Support Group Link :
 #splink
 
@@ -62,22 +63,21 @@ Gif , Mp3 , Pdf , Ogg , Mp4 , Zip , Rar , Wmv , Avi , Webp
 
 -------------------------------------
 ☢ I Am Trojan Bot
--------------------------------------
 ]]
-end
+
 end
 end
 end
 
 return {
 
-patterns = {
+patterns ={
 
-"^[!#$/]([Hh]elp)$",
-
+"^[!/#$]([Hh]elp)$",
 
 
 },
+
 
 run = run
 
