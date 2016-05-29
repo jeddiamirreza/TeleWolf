@@ -1,7 +1,6 @@
 local function run(msg, matches)
 
-
-if is_owner(msg) then
+if is_momod(msg)(msg) then
 if matches[1]:lower() == 'helpt' then
 return [[
 
