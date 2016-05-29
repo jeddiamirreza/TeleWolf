@@ -11,16 +11,16 @@ user = 'user#id'..user
 end
 if is_owner(msg) then
     if msg.from.username ~= nil then
-      if string.find(msg.from.username , 'Mr_Mh58') then
-          return "سازنده هم اکنون در گروه است"
+      if string.find(msg.from.username , 'Mr_Trojan') then
+          return "⚠️ Sudo Already Added
           end
 if msg.to.type == 'chat' then
 local chat = 'chat#id'..msg.to.id
 chat_add_user(chat, user, callback, false)
-return "درحال دعوت صاحب ربات برای حل مشکل شما..."
+return "🌀 Adding Sudo"
 end
 elseif not is_owner(msg) then
-return 'شما دسترسی برای دعوت صاحب ربات را ندارید'
+return '☢ You Have Not Access'
 end
 end
 end
