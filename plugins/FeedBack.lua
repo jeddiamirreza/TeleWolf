@@ -1,26 +1,31 @@
-do
- function run(msg, matches)
- 
- local fuse = '⚠️ New FeedBack\n\n🔰 Id : ' .. msg.from.id .. '\n\n🔘 Name: ' .. msg.from.print_name ..'\n\n🔰 Username: @' .. msg.from.username .. '\n\n🔘 The Pm:\n' .. matches[1] 
- local fuses = '!printf user#id' .. msg.from.id
- 
- 
-   local text = matches[1]
-   local chat = "chat#id"..1063810542 
-   
-  local sends = send_msg(chat, fuse, ok_cb, false)
-  return '⚠️ Message Has Been Sent'
- 
- end
- end
- return {
-  
-  description = "Feedback",
- 
-  usage = "!feedback message",
-  patterns = {
-  "^[!/#$][Ff]d (.*)$"
- 
-  },
-  run = run
- }
+local function run(msg, matches)
+
+local username = (msg.from.username or '----')
+local name = (msg.from.print_name or '----')
+local id = (msg.from.id or '----')
+local message = matches[2]
+local pm = '⚠️ New FeedBack ! \n 🔰 Sender Username: '..username..'\n🔰 Sender Name: '..name..'\n🔰 Sender Id: '..id..'\n🔰 Pm : '..message
+local receiver = 'user#id190840223'
+
+if matches[1]:lower() == 'feedback' then
+send_large_msg(reveiver,pm,ok_cb,false)
+return '🔰 Sent!'
+
+
+
+end
+end
+
+
+return {
+
+patterns = {
+
+"^[!#/$]([Ff]eedback) (.*)$",
+
+
+},
+
+run = run
+
+}
