@@ -8,7 +8,7 @@ local pm = '⚠️ New FeedBack ! \n 🔰 Sender Username: '..username..'\n🔰 
 local receiver = 'user#id190840223'
 
 if matches[1]:lower() == 'feedback' then
-send_large_msg(reveiver,pm,ok_cb,false)
+send_large_msg(receiver,pm,ok_cb,false)
 return '🔰 Sent!'
 
 
