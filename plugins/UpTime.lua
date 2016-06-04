@@ -1,10 +1,10 @@
 
 function run(msg, matches)
 if not is_sudo(msg) then
-return 
+return '⚠️ You Do Not Have Access'
 end
-text = io.popen("uptime"):read('*all')
-  return text
+local text = io.popen("uptime"):read('*all')
+  return '🔰 Server Up Time: '..text
 end
 return {
   patterns = {
