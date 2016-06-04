@@ -39,7 +39,7 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-	  local text = 'SuperGroup has been added!'
+	  local text = '🔰 SuperGroup '..msg.to.print_name..' Added By '..msg.from.username
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -1433,7 +1433,7 @@ local function run(msg, matches)
 					data[tostring(msg.to.id)]['set_owner'] = tostring(matches[2])
 					save_data(_config.moderation.data, data)
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set ["..matches[2].."] as owner")
-					local text = "[ "..matches[2].." ] added as owner"
+					local text = "🔰 New Owner Has Been Set !\n"..matches[2].."Set For Group Owner"
 					return text
 				end]]
 				local	get_cmd = 'setowner'
@@ -1539,7 +1539,7 @@ local function run(msg, matches)
 
 		if matches[1] == "setabout" and is_momod(msg) then
 			local receiver = get_receiver(msg)
-			local about_text = matches[2]
+			local about_text = ""..matches[2].."\n"
 			local data_cat = 'description'
 			local target = msg.to.id
 			data[tostring(target)][data_cat] = about_text
@@ -2096,5 +2096,4 @@ return {
   run = run,
   pre_process = pre_process
 }
---End supergrpup.lua
---By @Rondoozle
+
