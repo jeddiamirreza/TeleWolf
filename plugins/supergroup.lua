@@ -29,6 +29,7 @@ local function check_member_super(cb_extra, success, result)
 		  lock_tgservice = 'no',
 		  lock_contacts = 'no',
 		  strict = 'no'
+		  lock_emoji = 'yes'
         }
       }
       save_data(_config.moderation.data, data)
@@ -194,6 +195,30 @@ local function lock_group_links(msg, data, target)
     data[tostring(target)]['settings']['lock_link'] = 'yes'
     save_data(_config.moderation.data, data)
     return 'Link posting has been locked'
+  end
+end
+
+ local group_fosh_lock = data[tostring(target)]['settings']['lock_fosh']
+  if group_fosh_lock == 'yes' then
+    return 'fosh posting is already locked'
+  else
+    data[tostring(target)]['settings']['lock_fosh'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'fosh posting has been locked'
+  end
+end
+
+local function unlock_group_fosh(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_fosh_lock = data[tostring(target)]['settings']['lock_fosh']
+  if group_fosh_lock == 'no' then
+    return 'fosh posting is not locked'
+  else
+    data[tostring(target)]['settings']['lock_fosh'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'fosh posting has been unlocked'
   end
 end
 
@@ -593,7 +618,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "⚠️ Group Settings:\n🔰 Lock Links : "..settings.lock_link.."\n🔰 Lock Flood: "..settings.flood.."\n🔰 Lock Emoji: "..settings.lock_emoji.."\n🔰 Flood Sensitivity : "..NUM_MSG_MAX.."\n🔰 Lock Spam: "..settings.lock_spam.."\n🔰 Lock Arabic: "..settings.lock_arabic.."\n🔰 Lock Member: "..settings.lock_member.."\n🔰 Lock RTL: "..settings.lock_rtl.."\n🔰 Lock Tgservice : "..settings.lock_tgservice.."\n🔰 Lock Sticker: "..settings.lock_sticker.."\n🔰 Public: "..settings.public.."\n🔰 Strict Settings: "..settings.strict.."\n-----------------------------------------\n⭕️ Group Type: #Supergroup \n⭕️ Group Name: "..msg.to.print_name.."\n-----------------------------------------\n⚠️ I Am Trojan Bot"
+  local text = "⚠️ Group Settings:\n\n🔰 Lock Links : "..settings.lock_link.."\n🔰 Lock Flood: "..settings.flood.."\n🔰 Lock Emoji: "..settings.lock_emoji.."\n🔰 Lock Fosh: "..settings.lock_fosh.."\n🔰 Flood Sensitivity : "..NUM_MSG_MAX.."\n🔰 Lock Spam: "..settings.lock_spam.."\n🔰 Lock Arabic: "..settings.lock_arabic.."\n🔰 Lock Member: "..settings.lock_member.."\n🔰 Lock RTL: "..settings.lock_rtl.."\n🔰 Lock Tgservice : "..settings.lock_tgservice.."\n🔰 Lock Sticker: "..settings.lock_sticker.."\n🔰 Public: "..settings.public.."\n🔰 Strict Settings: "..settings.strict.."\n-----------------------------------------\n⭕️ Group Type: #Supergroup \n⭕️ Group Name: "..msg.to.print_name.."\n-----------------------------------------\n⚠️ I Am Trojan Bot"
   return text
 end
 
@@ -1682,6 +1707,10 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked link posting ")
 				return lock_group_links(msg, data, target)
 			end
+				if matches[2] == 'fosh' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked fosh posting ")
+				return lock_group_fosh(msg, data, target)
+			end
 			if matches[2] == 'emoji' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked emoji posting ")
 				return lock_group_emoji(msg, data, target)
@@ -1730,7 +1759,14 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked link posting")
 				return unlock_group_links(msg, data, target)
 			end
-			
+			if matches[2] == 'fosh' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked fosh posting")
+				return unlock_group_fosh(msg, data, target)
+			end
+			if matches[2] == 'emoji' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked emoji posting")
+				return unlock_group_emoji(msg, data, target)
+			end
 			if matches[2] == 'spam' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked spam")
 				return unlock_group_spam(msg, data, target)
