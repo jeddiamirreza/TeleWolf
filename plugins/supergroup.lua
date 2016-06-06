@@ -212,7 +212,11 @@ local function unlock_group_links(msg, data, target)
   end
 end
 
-local group_fosh_lock = data[tostring(target)]['settings']['lock_fosh']
+local function lock_group_fosh(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_fosh_lock = data[tostring(target)]['settings']['lock_fosh']
   if group_fosh_lock == 'yes' then
     return 'fosh posting is already locked'
   else
