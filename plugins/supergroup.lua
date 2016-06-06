@@ -198,7 +198,21 @@ local function lock_group_links(msg, data, target)
   end
 end
 
- local group_fosh_lock = data[tostring(target)]['settings']['lock_fosh']
+local function unlock_group_links(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_link_lock = data[tostring(target)]['settings']['lock_link']
+  if group_link_lock == 'no' then
+    return 'Link posting is not locked'
+  else
+    data[tostring(target)]['settings']['lock_link'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Link posting has been unlocked'
+  end
+end
+
+local group_fosh_lock = data[tostring(target)]['settings']['lock_fosh']
   if group_fosh_lock == 'yes' then
     return 'fosh posting is already locked'
   else
@@ -219,20 +233,6 @@ local function unlock_group_fosh(msg, data, target)
     data[tostring(target)]['settings']['lock_fosh'] = 'no'
     save_data(_config.moderation.data, data)
     return 'fosh posting has been unlocked'
-  end
-end
-
-local function unlock_group_links(msg, data, target)
-  if not is_momod(msg) then
-    return
-  end
-  local group_link_lock = data[tostring(target)]['settings']['lock_link']
-  if group_link_lock == 'no' then
-    return 'Link posting is not locked'
-  else
-    data[tostring(target)]['settings']['lock_link'] = 'no'
-    save_data(_config.moderation.data, data)
-    return 'Link posting has been unlocked'
   end
 end
 
