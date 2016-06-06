@@ -29,7 +29,7 @@ local function check_member_super(cb_extra, success, result)
 		  lock_tgservice = 'no',
 		  lock_contacts = 'no',
 		  strict = 'no'
-		  lock_emoji = 'yes'
+		
         }
       }
       save_data(_config.moderation.data, data)
