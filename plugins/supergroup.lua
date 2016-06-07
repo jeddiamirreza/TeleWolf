@@ -1736,7 +1736,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'lock +' and is_momod(msg) then
+		if matches[1] == 'lock' and is_momod(msg) then
 			local target = msg.to.id
 			if matches[2] == 'links' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked link posting ")
@@ -1792,7 +1792,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'lock -' and is_momod(msg) then
+		if matches[1] == 'lock' and is_momod(msg) then
 			local target = msg.to.id
 			if matches[2] == 'links' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked link posting")
@@ -2180,8 +2180,8 @@ return {
 	"^[#!/]([Ss]etphoto)$",
 	"^[#!/]([Ss]etusername) (.*)$",
 	"^[#!/]([Dd]el)$",
-	"^[#!/]([Ll]ock +) (.*)$",
-	"^[#!/]([Ll]ock -) (.*)$",
+	"^[#!/]([Ll]ock) (.*)$",
+	"^[#!/]([Uu]nlock) (.*)$",
 	"^[#!/]([Mm]ute) ([^%s]+)$",
 	"^[#!/]([Uu]nmute) ([^%s]+)$",
 	"^[#!/]([Mm]uteuser)$",
