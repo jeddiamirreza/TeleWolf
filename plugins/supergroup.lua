@@ -216,47 +216,6 @@ local function unlock_group_links(msg, data, target)
   end
 end
 
-	if matches[2] == 'fwd' then
-				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked fwd posting")
-				return unlock_group_fwd(msg, data, target)
-			end
-			
-			
-			
-			
-			
-			
-			 local group_fwd_lock = data[tostring(target)]['settings']['lock_fwd']
-  if group_fwd_lock == 'yes' then
-    return '🔹 forward Is Already Locked'
-  else
-    data[tostring(target)]['settings']['lock_fwd'] = 'yes'
-    save_data(_config.moderation.data, data)
-    return '🔸 forward Has Been Locked'
-  end
-end
-
-local function unlock_group_fwd(msg, data, target)
-  if not is_momod(msg) then
-    return
-  end
-  local group_fwd_lock = data[tostring(target)]['settings']['lock_fwd']
-  if group_fwd_lock == 'no' then
-    return '🔹 forward  Is Already Unlocked'
-  else
-    data[tostring(target)]['settings']['lock_fwd'] = 'no'
-    save_data(_config.moderation.data, data)
-    return '🔸 forward  Has Been Unlocked'
-  end
-end
-
-
-
-
-
-
-
-
 local function lock_group_fwd(msg, data, target)
   if not is_momod(msg) then
     return
