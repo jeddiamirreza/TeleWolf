@@ -282,6 +282,7 @@ function create_config( )
 "unshort";
 "helpowner";
 "memberhelp";
+"Lockrp";
 
 	
     },
