@@ -215,6 +215,30 @@ local function unlock_group_links(msg, data, target)
   end
 end
 
+ local group_fwd_lock = data[tostring(target)]['settings']['lock_fwd']
+  if group_fwd_lock == 'yes' then
+    return '🔹 forward Is Already Locked'
+  else
+    data[tostring(target)]['settings']['lock_fwd'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return '🔸 forward Has Been Locked'
+  end
+end
+
+local function unlock_group_fwd(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_fwd_lock = data[tostring(target)]['settings']['lock_fwd']
+  if group_fwd_lock == 'no' then
+    return '🔹 forward  Is Already Unlocked'
+  else
+    data[tostring(target)]['settings']['lock_fwd'] = 'no'
+    save_data(_config.moderation.data, data)
+    return '🔸 forward  Has Been Unlocked'
+  end
+end
+
 local function lock_group_reply(msg, data, target)
   if not is_momod(msg) then
     return
@@ -653,7 +677,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "🔹🔸 Group Settings:\n\n🔸 Lock Links : "..settings.lock_link.."\n🔸 Lock Reply: "..settings.lock_reply.."\n🔸 Lock Flood: "..settings.flood.."\n🔸 Lock Emoji: "..settings.lock_emoji.."\n🔸 Lock Fosh: "..settings.lock_fosh.."\n🔸 Flood Sensitivity : "..NUM_MSG_MAX.."\n🔸 Lock Spam: "..settings.lock_spam.."\n🔸 Lock Arabic: "..settings.lock_arabic.."\n🔸 Lock Member: "..settings.lock_member.."\n🔸 Lock RTL: "..settings.lock_rtl.."\n🔸 Lock Tgservice : "..settings.lock_tgservice.."\n🔸 Lock Sticker: "..settings.lock_sticker.."\n🔸 Public: "..settings.public.."\n🔸 Strict Settings: "..settings.strict.."\n-----------------------------------------\n🔹 Group Type: #Supergroup \n🔹 Group Name: "..msg.to.print_name.."\n-----------------------------------------\n⚠️ I Am Trojan Bot"
+  local text = "🔹🔸 Group Settings:\n\n🔸 Lock Links : "..settings.lock_link.."\n🔸 Lock Reply"..settings.lock_reply.."\n🔸 Lock Fwd(Forward): "..settings.lock_fwd.."\n🔸 Lock Flood: "..settings.flood.."\n🔸 Lock Emoji: "..settings.lock_emoji.."\n🔸 Lock Fosh: "..settings.lock_fosh.."\n🔸 Flood Sensitivity : "..NUM_MSG_MAX.."\n🔸 Lock Spam: "..settings.lock_spam.."\n🔸 Lock Arabic: "..settings.lock_arabic.."\n🔸 Lock Member: "..settings.lock_member.."\n🔸 Lock RTL: "..settings.lock_rtl.."\n🔸 Lock Tgservice : "..settings.lock_tgservice.."\n🔸 Lock Sticker: "..settings.lock_sticker.."\n🔸 Public: "..settings.public.."\n🔸 Strict Settings: "..settings.strict.."\n-----------------------------------------\n🔹 Group Type: #Supergroup \n🔹 Group Name: "..msg.to.print_name.."\n-----------------------------------------\n⚠️ I Am Trojan Bot"
   return text
 end
 
@@ -1742,6 +1766,10 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked link posting ")
 				return lock_group_links(msg, data, target)
 			end
+			if matches[2] == 'fwd' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked Fwd posting ")
+				return lock_group_fwd(msg, data, target)
+			end
 				if matches[2] == 'reply' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked reply posting ")
 				return lock_group_reply(msg, data, target)
@@ -1797,6 +1825,10 @@ local function run(msg, matches)
 			if matches[2] == 'links' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked link posting")
 				return unlock_group_links(msg, data, target)
+			end
+			if matches[2] == 'fwd' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked fwd posting")
+				return unlock_group_fwd(msg, data, target)
 			end
 			if matches[2] == 'reply' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked reply posting")
