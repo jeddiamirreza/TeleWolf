@@ -20,8 +20,8 @@ local function check_member_super(cb_extra, success, result)
           set_name = string.gsub(msg.to.title, '_', ' '),
 		  lock_arabic = 'no',
 		  lock_link = "yes",
-		  lock_reply = "yes",
-		  lock_emoji = "yes",
+		  lock_reply = "no",
+		  lock_emoji = "no",
 		  lock_fosh = "yes",
           flood = 'yes',
 		  lock_spam = 'yes',
@@ -1792,7 +1792,7 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'lock' and is_momod(msg) then
+		if matches[1] == 'unlock' and is_momod(msg) then
 			local target = msg.to.id
 			if matches[2] == 'links' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked link posting")
