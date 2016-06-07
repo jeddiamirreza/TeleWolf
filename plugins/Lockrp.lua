@@ -27,13 +27,13 @@ end
 local function run(msg, matches)
     chat_id =  msg.to.id
     
-    if is_momod(msg) and matches[1] == 'lock +' then
+    if is_momod(msg) and matches[1] == 'lock' then
       
             
                     local hash = 'mate:'..msg.to.id
                     redis:set(hash, true)
                     return "🔹 Done"
-  elseif is_momod(msg) and matches[1] == 'lock -' then
+  elseif is_momod(msg) and matches[1] == 'lock' then
                     local hash = 'mate:'..msg.to.id
                     redis:del(hash)
                     return "🔸 Done"
