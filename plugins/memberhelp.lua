@@ -1,8 +1,5 @@
 local function run(msg, matches)
-
-
-if not is_momod(msg) then
-
+if not is_momod(msg)
 if matches[1]:lower() == 'help' then
 return [[
 
@@ -63,21 +60,22 @@ Gif , Mp3 , Pdf , Ogg , Mp4 , Zip , Rar , Wmv , Avi , Webp
 
 -------------------------------------
 ☢ I Am Trojan Bot
-]]
 
+]]
 end
 end
 end
+
 
 return {
 
-patterns ={
+patterns = {
 
 "^[!/#$]([Hh]elp)$",
 
 
-},
 
+},
 
 run = run
 
