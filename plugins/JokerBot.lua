@@ -1,25 +1,28 @@
-do
+local function run(msg, matches)
+  
+if matches[1]:lower() == 'version' then
+return [[
+🔸 Trojan Bot V 1.5 
+---------------------
+🔹 Based On Teleseed
+---------------------
+🔸 Thank For @iicc1
+---------------------
+🔹 Bot Created By @Mr_Trojan , 
+---------------------
+🔸 Open Source !
+---------------------
+🔹 Github Link : Coming Soon ...
+]]
+end
+end
 
-function run(msg, matches)
-  return [[🃏 DeadJoker Bot (Atni Spam Bot)
------------------------------------
-🔻 Best Anti Spam Bot
------------------------------------
-🔰 Chanel Id: @FuckSon_Ch
------------------------------------
-⚠️ Develope: @Mr_Mh58 , @FucksoN
------------------------------------
-🔘 Bot Version: 3.5]]
-end
 return {
-  description = ".", 
-  usage = "About Joker Bot",
-  patterns = {
-    "^[!#/$]([Jj][Oo][Kk][Ee][Rr])$",
-    "^[!#/$]([Jj][Oo][Kk][Ee][Rr][Bb][Oo][Tt])$",
-    "^[!#/$]([Bb][Oo][Tt][Aa][Bb][Oo][Uu][Tt])$",
-    
-  },
-  run = run
+
+patterns = {
+
+"[!#$/*&]([Vv][Ee][Rr][Ss][Ii][Oo][Nn])",
+
+},
+run = run
 }
-end
