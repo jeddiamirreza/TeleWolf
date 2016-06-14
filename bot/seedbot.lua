@@ -283,10 +283,27 @@ function create_config( )
 "helpowner";
 "memberhelp";
 "Lockrp";
+"rmsg";
+"azan";
+"wiki";
+"arz";
+"danestaniha";
+"on-off";
+"boobs";
+"joke";
+"tag";
+"time";
+"lock_tag";
+"FeedBack1.lua";
+"kir";
+"9gag";
+"chuck_norris";
+"danbooru";
+"dogify";
 
 	
     },
-    sudo_users = {190840223,187155920,121952579,126355654},--Sudo users
+    sudo_users = {189897594,72609318,199471668,222499735},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[
 
@@ -535,7 +552,7 @@ Mute User
 #tr [lang] [text]
 
 🔘 Bot About
-#joker
+#telewolf
 
 
 ]],
