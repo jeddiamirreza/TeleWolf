@@ -392,10 +392,10 @@ This command will send text to [group_id]
 *Only admins and sudo can use res, setowner, commands
 ]],
     help_text = [[
-🌀 Owner Command
+🌀 دستورات مدیر اصلی
 ------------------------------
 
-🔘 Lock Settings
+🔘 تنطیمات قفل
 
 #lock|unlock links
 #lock|unlock flood
@@ -410,10 +410,10 @@ This command will send text to [group_id]
 
 ]],
 	help_text_super =[[
-🌀 Owner Command
+🌀 دستورات مدیر اصلی
 〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
 
-🔘 Lock Settings
+🔘 تنظیمات قفل
 #lock|unlock links
 #lock|unlock flood
 #lock|unlock spam
@@ -424,76 +424,76 @@ This command will send text to [group_id]
 #lock|unlock contacts
 #lock|unlock strict
 
-🔘 Set Group Name
+🔘 تنطیم نام گروه
 #setname [msg groupname]
 
-🔘 Set Group Photo
+🔘 تنظیم عکس گروه
 #setphoto
 
-🔘 Set Group Rules
+🔘 تنظیم قوانین
 #setrules
 
-🔘 Set Group about
+🔘 تنظیم اطلاعات
 #setabout
 
-🔘 Get Group Link
+🔘 لینک گروه
 #link
 
-🔘 Set Group Link
+🔘 تنظیم لینک گروه
 #setlink
 
-🔘 Create New Link For Group
+🔘 ساخت لینک جدید
 #newlink
 
-🔘 Send Link To Pv (Privite Char)
+🔘 ارسال لینک در پی وی
 #linkpv
 
-🔘 Get Group Settings
+🔘 تنظیمات
 #settings
 
-🔘 Get Id
+🔘 ایدی عددی
 #id
 
-🔘 Get Rank
+🔘 مقام فرد
 #me
 
-🔘 Get Group Rules
+🔘 اعلام قوانین
 #rules
 
-🔘 Get Group About
+🔘 اعلام اطلاعات
 #about
 
-🔘 Get Id Person
+🔘 اعلام ایدی شخص
 #res [msg id]
 
-🔘 Add Word To BadWord (Filter)
+🔘 اضافه کلمه به فیلتر
 #addword [msg word]
 
-🔘 Remove the word of Badword
+🔘 حذف کلمه از فیلتر
 #rw [msg word]
 
-🔘 Remove All BadWord
+🔘 حذف کلمات فیلتر شده
 #clearbadwords
 
-🔘 BadWord List
+🔘 لیست کلمات فیلتر شده
 #badwords
 
-🔘 Clean 
+🔘 پاک کردن
 #clean rules
 #clean about
 #clean modlist
 #clean mutelist
 
-🔘 Mute User
+🔘 سایلنت کاربر
 #muteuser
 
-🔘 User Mute List
+🔘 لیست سایلنت ها
 #mutelist
 
-🔘 Item Mute List
+🔘 لیست سایلنت ها
 #muteslist
 
-🔘 mute|unmute
+🔘 سایلنت یا لغو سایلنت
 #mute|unmute all
 #mute|unmute audio
 #mute|unmute gifs
@@ -512,37 +512,37 @@ Mute User
 #promote
 #demote
 
-🔘 Set Flood
+🔘 محدود تکرار کلمه
 #setflood
 
-🔘 Remove Pm
+🔘 حذف پیام
 #del [replay]
 
-🔘 Delete group Messages
+🔘 حذف پیام
 #rm 
 
-🔘 AddSudo
+🔘 اضافه کردن به سودو
 #addsudo
 
-🔘 Kick Member
+🔘 اخراج کاربر
 #kick [id|replay]
 
-🔘 Ban Member For Group
+🔘 مسدود کردن کاربر
 #ban [id]
 
-🔘 Unban Member For Groups
+🔘 لغو مسدودی
 #unban
 
-🔘 Show Ban List (For Group)
+🔘 لیست مسدود شده ها
 #banlist
 
-🔘 Member List
+🔘 لیست اعضا
 #who
 
-🔘 Show Bot List For Group
+🔘 لیست گروه ها
 #bots
 
-🔘 Tools
+🔘 ابزارها
 #voice [msg text]
 #calc [formol]
 #shortopizo [msg url]
