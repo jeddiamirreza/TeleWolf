@@ -94,7 +94,7 @@ local function run(msg, matches)
 if not is_momod(msg) then return '_|_' end
   local asd = '1'
     return clear_commandbad(msg, asd)
-  elseif matches[2] == 'remword' or matches[2] == 'rw' then
+  elseif matches[2] == 'delword' or matches[2] == 'rw' then
    if not is_momod(msg) then return '_|_' end
     return clear_commandsbad(msg, matches[3])
   else
@@ -108,7 +108,7 @@ return {
   patterns = {
   "^([!/])(rw) (.*)$",
   "^([!/])(addword) (.*)$",
-   "^([!/])(remword) (.*)$",
+   "^([!/])(delword) (.*)$",
     "^([!/])(badwords)$",
     "^([!/])(clearbadwords)$",
 "^(.+)$",

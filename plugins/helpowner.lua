@@ -9,7 +9,7 @@ if is_momod(msg)
 
 if matches[1]:lower() == 'helpt' then
 return [[
-🔰 Trojan Bot Tools (Owner Help) :
+🔰 TELEWOLF Bot Tools (Owner Help) :
 
 
 ⚠️ Coin In Now :
@@ -65,7 +65,7 @@ Gif , Mp3 , Pdf , Ogg , Mp4 , Zip , Rar , Wmv , Avi , Webp
 #text [Text]
 
 -------------------------------------
-☢ I Am Trojan Bot
+☢ I Am TELEWOLF Bot
 
 ]]
 

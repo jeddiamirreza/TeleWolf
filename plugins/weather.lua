@@ -27,7 +27,7 @@ local function get_weather(location)
     conditions = conditions .. 'مه 🌫'
   end
 
-  return temp .. '\n\n' .. conditions..'\n\n@JokerAnti'
+  return temp .. '\n\n' .. conditions..'\n\n@tele_wolf'
 end
 local function run(msg, matches) 
     city = matches[1]
